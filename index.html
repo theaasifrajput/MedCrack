@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Med Crack Institute | NEET Coaching</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <h1 class="logo">Med Crack Institute</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="courses.html">Courses Offered</a></li>
+          <li><a href="professors.html">Professors</a></li>
+          <li><a href="alumni.html">Alumni</a></li>
+        </ul>
+      </nav>
+      <button id="openInquiry" class="btn">Inquiry</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h2>Crack NEET with Confidence</h2>
+        <p>Structured learning, expert mentorship, and consistent practice to help you secure your medical seat.</p>
+        <a class="btn" href="courses.html">Explore Courses</a>
+      </div>
+    </section>
+
+    <section class="highlights container">
+      <article class="card">
+        <h3>Top Faculty</h3>
+        <p>Learn from experienced NEET educators with proven results.</p>
+      </article>
+      <article class="card">
+        <h3>Personal Mentorship</h3>
+        <p>Weekly progress tracking and one-on-one guidance sessions.</p>
+      </article>
+      <article class="card">
+        <h3>Test Series</h3>
+        <p>NEET pattern mock tests with in-depth analysis and feedback.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Med Crack Institute. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div id="inquiryModal" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="inquiryTitle">
+      <button class="close" id="closeInquiry" aria-label="Close">×</button>
+      <h3 id="inquiryTitle">Inquiry Form</h3>
+      <form>
+        <label for="name">Name</label>
+        <input id="name" type="text" placeholder="Your full name" required />
+
+        <label for="phone">Phone</label>
+        <input id="phone" type="tel" placeholder="Your phone number" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" rows="4" placeholder="Tell us your requirement"></textarea>
+
+        <button type="submit" class="btn">Submit Inquiry</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
