@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Courses – Med Crack Institute</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    /* ── COURSE CARDS ── */
+    .courses-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;
+    }
+    .course-card {
+      border: 1.5px solid var(--border); border-radius: 14px; overflow: hidden;
+      background: var(--white); transition: all 0.3s;
+    }
+    .course-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(10,22,40,0.12); border-color: var(--gold); }
+    .course-header {
+      padding: 2rem; background: var(--deep); position: relative; overflow: hidden;
+    }
+    .course-header::after {
+      content: ''; position: absolute; bottom: -20px; right: -20px;
+      width: 100px; height: 100px; border-radius: 50%;
+      background: rgba(232,184,75,0.1);
+    }
+    .course-icon { font-size: 2.5rem; margin-bottom: 1rem; display: block; }
+    .course-name { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--white); margin-bottom: 0.5rem; }
+    .course-tag {
+      display: inline-block; background: rgba(232,184,75,0.2); color: var(--gold);
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em;
+      padding: 0.25rem 0.75rem; border-radius: 20px;
+    }
+    .course-body { padding: 1.8rem 2rem; }
+    .course-desc { color: var(--muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.5rem; }
+    .course-features { list-style: none; margin-bottom: 1.8rem; }
+    .course-features li {
+      color: var(--text); font-size: 0.9rem; padding: 0.45rem 0;
+      display: flex; align-items: flex-start; gap: 0.6rem;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    .course-features li::before { content: '✓'; color: var(--crimson); font-weight: 700; font-size: 0.85rem; flex-shrink: 0; margin-top: 2px; }
+    .course-fee {
+      display: flex; justify-content: space-between; align-items: center;
+      padding-top: 1rem; border-top: 1.5px solid var(--border);
+    }
+    .fee-label { font-size: 0.8rem; color: var(--muted); font-weight: 500; }
+    .fee-amount { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--crimson); }
+    .course-cta {
+      display: block; width: 100%; margin-top: 1.2rem;
+      padding: 0.8rem; background: var(--navy); color: var(--white);
+      border: none; border-radius: 8px; font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.2s; text-align: center;
+    }
+    .course-cta:hover { background: var(--crimson); }
+
+    /* ── COMPARISON TABLE ── */
+    #compare { background: var(--card-bg); }
+    .compare-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+    .compare-table th {
+      background: var(--navy); color: var(--white);
+      padding: 1rem 1.2rem; text-align: left;
+      font-family: 'DM Sans', sans-serif; font-weight: 600;
+    }
+    .compare-table th:first-child { border-radius: 10px 0 0 0; }
+    .compare-table th:last-child { border-radius: 0 10px 0 0; }
+    .compare-table td { padding: 0.85rem 1.2rem; border-bottom: 1px solid var(--border); }
+    .compare-table tr:nth-child(even) td { background: rgba(255,255,255,0.6); }
+    .compare-table tr:hover td { background: rgba(232,184,75,0.08); }
+    .check-yes { color: #27ae60; font-weight: 700; }
+    .check-no  { color: #bbb; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="../index.html" class="nav-logo">Med<span>Crack</span></a>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="courses.html" class="active">Courses</a></li>
+    <li><a href="professors.html">Faculty</a></li>
+    <li><a href="alumni.html">Alumni</a></li>
+  </ul>
+  <button class="nav-cta" onclick="openModal()">Free Inquiry</button>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-inner">
+    <div class="page-hero-tag">📚 Programs Offered</div>
+    <h1>Courses <em>Designed</em><br>to Win NEET</h1>
+    <p>Four carefully structured programs for every stage of your NEET journey — from foundation to final sprint. Choose yours.</p>
+  </div>
+</div>
+
+<!-- COURSES GRID -->
+<section>
+  <div class="section-inner">
+    <div class="courses-grid">
+
+      <div class="course-card">
+        <div class="course-header">
+          <span class="course-icon">🎓</span>
+          <div class="course-name">2-Year Classroom</div>
+          <span class="course-tag">Class XI–XII</span>
+        </div>
+        <div class="course-body">
+          <p class="course-desc">Comprehensive integrated program starting from Class XI. Full NEET syllabus with board exam synchronisation so you never feel split between two goals.</p>
+          <ul class="course-features">
+            <li>Complete NCERT & NEET coverage</li>
+            <li>Weekly tests + chapter-wise DPPs</li>
+            <li>Board exam preparation included</li>
+            <li>Doubt sessions 6 days/week</li>
+            <li>Full-length mock test series (40+)</li>
+            <li>Parent-teacher progress meetings</li>
+          </ul>
+          <div class="course-fee">
+            <span class="fee-label">Annual Fee</span>
+            <span class="fee-amount">₹95,000</span>
+          </div>
+          <button class="course-cta" onclick="openModal()">Enquire About This Course</button>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <div class="course-header">
+          <span class="course-icon">⚡</span>
+          <div class="course-name">1-Year Dropper</div>
+          <span class="course-tag">XII Passed</span>
+        </div>
+        <div class="course-body">
+          <p class="course-desc">Intensive program for XII passouts targeting NEET. Focused revision, exam-strategy coaching, and relentless practice to convert a near-miss into selection.</p>
+          <ul class="course-features">
+            <li>Accelerated full-syllabus revision</li>
+            <li>10,000+ MCQ practice bank</li>
+            <li>Rank improvement strategies</li>
+            <li>Topic-wise score analytics dashboard</li>
+            <li>40+ full mock tests</li>
+            <li>Dedicated doubt mentors</li>
+          </ul>
+          <div class="course-fee">
+            <span class="fee-label">Annual Fee</span>
+            <span class="fee-amount">₹1,05,000</span>
+          </div>
+          <button class="course-cta" onclick="openModal()">Enquire About This Course</button>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <div class="course-header">
+          <span class="course-icon">🚀</span>
+          <div class="course-name">90-Day Crash Course</div>
+          <span class="course-tag">3 Months</span>
+        </div>
+        <div class="course-body">
+          <p class="course-desc">90-day high-intensity revision course for students appearing in the upcoming NEET. Last-mile preparation distilled into high-yield, exam-ready content.</p>
+          <ul class="course-features">
+            <li>High-yield topic focus</li>
+            <li>Daily 3-hour intensive sessions</li>
+            <li>Formula & concept revision sheets</li>
+            <li>15 full-length mock tests</li>
+            <li>Score prediction analytics</li>
+            <li>Emergency doubt hotline</li>
+          </ul>
+          <div class="course-fee">
+            <span class="fee-label">Program Fee</span>
+            <span class="fee-amount">₹35,000</span>
+          </div>
+          <button class="course-cta" onclick="openModal()">Enquire About This Course</button>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <div class="course-header">
+          <span class="course-icon">💻</span>
+          <div class="course-name">Online Hybrid</div>
+          <span class="course-tag">Flexible</span>
+        </div>
+        <div class="course-body">
+          <p class="course-desc">Live + recorded lectures for students outside city limits. Identical curriculum to classroom batches with personalised mentoring and physical study material.</p>
+          <ul class="course-features">
+            <li>Live classes + 7-day recorded backup</li>
+            <li>Online test series & analytics</li>
+            <li>Personal mentor assigned (1-on-1 calls)</li>
+            <li>Study material couriered home</li>
+            <li>Weekly parent progress reports</li>
+            <li>App-based doubt submission</li>
+          </ul>
+          <div class="course-fee">
+            <span class="fee-label">Annual Fee</span>
+            <span class="fee-amount">₹72,000</span>
+          </div>
+          <button class="course-cta" onclick="openModal()">Enquire About This Course</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section id="compare">
+  <div class="section-inner">
+    <div class="section-label">Compare</div>
+    <h2 class="section-title">Which Program Is Right for You?</h2>
+    <p class="section-sub">A side-by-side look at what's included in each program to help you make the right choice.</p>
+    <div style="overflow-x:auto;">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>2-Year</th>
+            <th>Dropper</th>
+            <th>Crash Course</th>
+            <th>Online Hybrid</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Board Exam Coverage</td><td class="check-yes">✓</td><td class="check-no">—</td><td class="check-no">—</td><td class="check-yes">✓</td></tr>
+          <tr><td>Full Mock Tests</td><td>40+</td><td>40+</td><td>15</td><td>40+</td></tr>
+          <tr><td>Daily DPPs</td><td class="check-yes">✓</td><td class="check-yes">✓</td><td class="check-yes">✓</td><td class="check-yes">✓</td></tr>
+          <tr><td>Doubt Sessions</td><td>6 days/week</td><td>6 days/week</td><td>Daily</td><td>App-based</td></tr>
+          <tr><td>Personal Mentor</td><td class="check-no">—</td><td class="check-yes">✓</td><td class="check-no">—</td><td class="check-yes">✓</td></tr>
+          <tr><td>Recorded Lectures</td><td class="check-no">—</td><td class="check-no">—</td><td class="check-no">—</td><td class="check-yes">✓</td></tr>
+          <tr><td>Physical Study Material</td><td class="check-yes">✓</td><td class="check-yes">✓</td><td class="check-yes">✓</td><td class="check-yes">✓ (Couriered)</td></tr>
+          <tr><td>Performance Analytics</td><td class="check-yes">✓</td><td class="check-yes">✓</td><td class="check-yes">✓</td><td class="check-yes">✓</td></tr>
+          <tr><td>Duration</td><td>2 Years</td><td>1 Year</td><td>3 Months</td><td>1-2 Years</td></tr>
+          <tr><td>Fee</td><td>₹95,000/yr</td><td>₹1,05,000</td><td>₹35,000</td><td>₹72,000/yr</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Med<span>Crack</span> Institute</div>
+  <p><strong>Address:</strong> 42, Medical Hub Complex, Sector 62, Noida, Uttar Pradesh – 201309</p>
+  <p><strong>Phone:</strong> +91-9876543210 &nbsp;|&nbsp; <strong>Email:</strong> admissions@medcrackinstitute.com</p>
+  <p style="margin-top:1rem;">© 2025 Med Crack Institute. All Rights Reserved.</p>
+</footer>
+
+<!-- INQUIRY MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <div id="modalForm">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem;">
+        <span style="font-size:2rem">🏥</span>
+        <h2 class="modal-title">Free Inquiry</h2>
+      </div>
+      <p class="modal-sub">Our academic counsellor will call you within 24 hours.</p>
+      <div class="form-grid">
+        <div class="form-row"><label>Student Name *</label><input type="text" id="studentName" placeholder="Full name" /></div>
+        <div class="form-row"><label>Parent Name *</label><input type="text" id="parentName" placeholder="Parent / Guardian" /></div>
+      </div>
+      <div class="form-grid">
+        <div class="form-row"><label>Mobile Number *</label><input type="tel" id="mobile" placeholder="+91 XXXXX XXXXX" /></div>
+        <div class="form-row"><label>Email Address</label><input type="email" id="email" placeholder="you@email.com" /></div>
+      </div>
+      <div class="form-grid">
+        <div class="form-row">
+          <label>Current Class *</label>
+          <select id="classSelect">
+            <option value="">Select class</option>
+            <option>Class X (Foundation)</option>
+            <option>Class XI</option>
+            <option>Class XII</option>
+            <option>XII Passed (Dropper)</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>Interested Program *</label>
+          <select id="program">
+            <option value="">Select program</option>
+            <option>2-Year Classroom</option>
+            <option>1-Year Dropper Batch</option>
+            <option>3-Month Crash Course</option>
+            <option>Online Hybrid</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <label>Message (Optional)</label>
+        <textarea id="message" placeholder="Tell us about your preparation, target score, or any queries..."></textarea>
+      </div>
+      <button class="modal-submit" onclick="submitForm()">Submit Inquiry →</button>
+    </div>
+    <div class="success-msg" id="successMsg">
+      <div class="check">✅</div>
+      <h3>Inquiry Submitted!</h3>
+      <p>Our team will contact you within 24 hours.</p>
+    </div>
+  </div>
+</div>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

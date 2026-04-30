@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Faculty – Med Crack Institute</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    /* ── FACULTY GRID ── */
+    #faculty { background: var(--white); }
+    .faculty-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 2rem;
+    }
+    .prof-card {
+      background: var(--card-bg); border: 1.5px solid var(--border);
+      border-radius: 16px; overflow: hidden;
+      transition: all 0.3s;
+    }
+    .prof-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(10,22,40,0.13); border-color: var(--gold); }
+    .prof-img {
+      width: 100%; height: 200px;
+      background: var(--deep);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 5rem; position: relative;
+    }
+    .prof-img::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 50%;
+      background: linear-gradient(to top, var(--card-bg), transparent);
+    }
+    .prof-body { padding: 1.5rem 1.8rem 1.8rem; }
+    .prof-name { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; color: var(--text); margin-bottom: 0.3rem; }
+    .prof-subject { color: var(--crimson); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.8rem; }
+    .prof-bio { color: var(--muted); font-size: 0.9rem; line-height: 1.65; margin-bottom: 1.2rem; }
+    .prof-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .prof-tag {
+      background: var(--white); border: 1px solid var(--border);
+      color: var(--text); font-size: 0.75rem; font-weight: 600;
+      padding: 0.25rem 0.7rem; border-radius: 20px;
+    }
+
+    /* ── TEACHING PHILOSOPHY ── */
+    #philosophy { background: var(--navy); }
+    #philosophy .section-title { color: var(--white); }
+    #philosophy .section-sub { color: rgba(255,255,255,0.5); }
+    .phil-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;
+    }
+    .phil-card {
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px; padding: 2rem; transition: all 0.3s;
+    }
+    .phil-card:hover { background: rgba(255,255,255,0.09); transform: translateY(-4px); }
+    .phil-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .phil-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--white); margin-bottom: 0.5rem; }
+    .phil-text { color: rgba(255,255,255,0.5); font-size: 0.88rem; line-height: 1.65; }
+
+    /* ── JOIN FACULTY ── */
+    #join { background: var(--card-bg); }
+    .join-box {
+      background: var(--white); border: 1.5px solid var(--border); border-radius: 20px;
+      padding: 3rem; display: flex; align-items: center; justify-content: space-between;
+      gap: 2rem; flex-wrap: wrap;
+    }
+    .join-box h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 900; color: var(--text); margin-bottom: 0.5rem; }
+    .join-box p { color: var(--muted); font-size: 0.95rem; line-height: 1.6; max-width: 480px; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="../index.html" class="nav-logo">Med<span>Crack</span></a>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="courses.html">Courses</a></li>
+    <li><a href="professors.html" class="active">Faculty</a></li>
+    <li><a href="alumni.html">Alumni</a></li>
+  </ul>
+  <button class="nav-cta" onclick="openModal()">Free Inquiry</button>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-inner">
+    <div class="page-hero-tag">👨‍🏫 Expert Faculty</div>
+    <h1>Learn from<br><em>AIIMS & IIT</em> Alumni</h1>
+    <p>Our faculty are doctors and scientists who have been where you want to go — and they stay till 9 PM to make sure you get there too.</p>
+  </div>
+</div>
+
+<!-- FACULTY GRID -->
+<section id="faculty">
+  <div class="section-inner">
+    <div class="section-label">Core Faculty</div>
+    <h2 class="section-title">Meet Your Mentors</h2>
+    <p class="section-sub">40+ expert educators with an average of 12 years of NEET coaching experience across all three core subjects.</p>
+    <div class="faculty-grid">
+
+      <div class="prof-card">
+        <div class="prof-img">👨‍⚕️</div>
+        <div class="prof-body">
+          <div class="prof-name">Dr. Rajesh Sharma</div>
+          <div class="prof-subject">Biology · Head of Department</div>
+          <p class="prof-bio">AIIMS Delhi alumnus with 15 years of NEET coaching. Author of "Rapid Bio Revision" — used by 50,000+ students. Specialises in making Genetics and Ecology intuitive through storytelling.</p>
+          <div class="prof-tags">
+            <span class="prof-tag">AIIMS Delhi</span>
+            <span class="prof-tag">15 yrs exp</span>
+            <span class="prof-tag">Botany & Zoology</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="prof-card">
+        <div class="prof-img">👩‍🔬</div>
+        <div class="prof-body">
+          <div class="prof-name">Dr. Priya Menon</div>
+          <div class="prof-subject">Chemistry · Senior Faculty</div>
+          <p class="prof-bio">PhD in Organic Chemistry from IIT Bombay. Her proprietary mnemonics for reaction mechanisms have helped 200+ students score a perfect 180 in Chemistry. Beloved for her clarity.</p>
+          <div class="prof-tags">
+            <span class="prof-tag">IIT Bombay PhD</span>
+            <span class="prof-tag">12 yrs exp</span>
+            <span class="prof-tag">Organic Chem</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="prof-card">
+        <div class="prof-img">🧑‍🏫</div>
+        <div class="prof-body">
+          <div class="prof-name">Prof. Anil Verma</div>
+          <div class="prof-subject">Physics · Senior Faculty</div>
+          <p class="prof-bio">Former IIT-JEE faculty who pivoted to NEET coaching full-time. Specialist in making Physics intuitive for medical aspirants — no calculus, pure concept mastery.</p>
+          <div class="prof-tags">
+            <span class="prof-tag">IIT Alumni</span>
+            <span class="prof-tag">18 yrs exp</span>
+            <span class="prof-tag">Mechanics & Optics</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="prof-card">
+        <div class="prof-img">👩‍🏫</div>
+        <div class="prof-body">
+          <div class="prof-name">Dr. Sunita Rao</div>
+          <div class="prof-subject">Zoology · Faculty</div>
+          <p class="prof-bio">MBBS from JIPMER Puducherry with a special focus on animal physiology and human anatomy. Known for her highly visual, diagram-heavy teaching style that sticks in memory.</p>
+          <div class="prof-tags">
+            <span class="prof-tag">JIPMER MBBS</span>
+            <span class="prof-tag">10 yrs exp</span>
+            <span class="prof-tag">Human Physiology</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="prof-card">
+        <div class="prof-img">👨‍🔬</div>
+        <div class="prof-body">
+          <div class="prof-name">Dr. Karan Mehta</div>
+          <div class="prof-subject">Physical Chemistry · Faculty</div>
+          <p class="prof-bio">MSc and PhD in Physical Chemistry from IISc Bangalore. Expert in Thermodynamics and Electrochemistry. His test-taking strategies for chemistry calculations are legendary among students.</p>
+          <div class="prof-tags">
+            <span class="prof-tag">IISc Bangalore</span>
+            <span class="prof-tag">8 yrs exp</span>
+            <span class="prof-tag">Physical Chem</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="prof-card">
+        <div class="prof-img">👩‍⚕️</div>
+        <div class="prof-body">
+          <div class="prof-name">Dr. Ananya Das</div>
+          <div class="prof-subject">Botany · Faculty</div>
+          <p class="prof-bio">PhD in Plant Biology from Delhi University. Her chapter-wise mind maps for plant physiology and reproduction have become a staple resource for NEET aspirants nationwide.</p>
+          <div class="prof-tags">
+            <span class="prof-tag">Delhi University</span>
+            <span class="prof-tag">9 yrs exp</span>
+            <span class="prof-tag">Plant Biology</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section id="philosophy">
+  <div class="section-inner">
+    <div class="section-label" style="color:var(--gold)">Teaching Approach</div>
+    <h2 class="section-title">Our Teaching Philosophy</h2>
+    <p class="section-sub">Every faculty member at Med Crack is trained not just to teach — but to mentor, motivate, and monitor each student's growth.</p>
+    <div class="phil-grid">
+      <div class="phil-card">
+        <div class="phil-icon">🧠</div>
+        <div class="phil-title">Concept First</div>
+        <p class="phil-text">We build deep conceptual understanding before solving questions — so students can handle any twist NEET throws at them.</p>
+      </div>
+      <div class="phil-card">
+        <div class="phil-icon">🔁</div>
+        <div class="phil-title">Spaced Repetition</div>
+        <p class="phil-text">Scientifically spaced revision schedules ensure nothing is forgotten by exam day. Topics are revisited at optimal intervals.</p>
+      </div>
+      <div class="phil-card">
+        <div class="phil-icon">📊</div>
+        <div class="phil-title">Error Analysis</div>
+        <p class="phil-text">Every wrong answer is a data point. Faculty analyse error patterns and personalise follow-up practice for each student.</p>
+      </div>
+      <div class="phil-card">
+        <div class="phil-icon">💬</div>
+        <div class="phil-title">Open-Door Policy</div>
+        <p class="phil-text">Students are encouraged to ask any question, anytime. No judgement, no time limits — just genuine mentoring.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOIN AS FACULTY -->
+<section id="join">
+  <div class="section-inner">
+    <div class="join-box">
+      <div>
+        <h3>Passionate About Teaching Medicine?</h3>
+        <p>We're always looking for dedicated educators who want to shape the next generation of doctors. Join India's most respected NEET coaching faculty.</p>
+      </div>
+      <button class="btn-primary" onclick="openModal()">Apply to Teach →</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Med<span>Crack</span> Institute</div>
+  <p><strong>Address:</strong> 42, Medical Hub Complex, Sector 62, Noida, Uttar Pradesh – 201309</p>
+  <p><strong>Phone:</strong> +91-9876543210 &nbsp;|&nbsp; <strong>Email:</strong> admissions@medcrackinstitute.com</p>
+  <p style="margin-top:1rem;">© 2025 Med Crack Institute. All Rights Reserved.</p>
+</footer>
+
+<!-- INQUIRY MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <div id="modalForm">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem;">
+        <span style="font-size:2rem">🏥</span>
+        <h2 class="modal-title">Free Inquiry</h2>
+      </div>
+      <p class="modal-sub">Our academic counsellor will call you within 24 hours.</p>
+      <div class="form-grid">
+        <div class="form-row"><label>Student Name *</label><input type="text" id="studentName" placeholder="Full name" /></div>
+        <div class="form-row"><label>Parent Name *</label><input type="text" id="parentName" placeholder="Parent / Guardian" /></div>
+      </div>
+      <div class="form-grid">
+        <div class="form-row"><label>Mobile Number *</label><input type="tel" id="mobile" placeholder="+91 XXXXX XXXXX" /></div>
+        <div class="form-row"><label>Email Address</label><input type="email" id="email" placeholder="you@email.com" /></div>
+      </div>
+      <div class="form-grid">
+        <div class="form-row">
+          <label>Current Class *</label>
+          <select id="classSelect">
+            <option value="">Select class</option>
+            <option>Class X (Foundation)</option>
+            <option>Class XI</option>
+            <option>Class XII</option>
+            <option>XII Passed (Dropper)</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>Interested Program *</label>
+          <select id="program">
+            <option value="">Select program</option>
+            <option>2-Year Classroom</option>
+            <option>1-Year Dropper Batch</option>
+            <option>3-Month Crash Course</option>
+            <option>Online Hybrid</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <label>Message (Optional)</label>
+        <textarea id="message" placeholder="Tell us about your preparation, target score, or any queries..."></textarea>
+      </div>
+      <button class="modal-submit" onclick="submitForm()">Submit Inquiry →</button>
+    </div>
+    <div class="success-msg" id="successMsg">
+      <div class="check">✅</div>
+      <h3>Inquiry Submitted!</h3>
+      <p>Our team will contact you within 24 hours.</p>
+    </div>
+  </div>
+</div>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

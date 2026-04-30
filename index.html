@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Med Crack Institute – NEET Coaching | Home</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* ── HERO ── */
+    #home {
+      min-height: 100vh;
+      background: var(--navy);
+      display: flex; align-items: center;
+      position: relative; overflow: hidden;
+      padding-top: 68px;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 50%, #1a2f5e 0%, transparent 65%),
+        radial-gradient(ellipse 50% 80% at 10% 80%, #1e0a0a 0%, transparent 60%);
+    }
+    .hero-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .hero-content {
+      position: relative; z-index: 1;
+      max-width: 1200px; margin: 0 auto; padding: 0 5vw;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+    }
+    .hero-tag {
+      display: inline-block;
+      background: rgba(232,184,75,0.15); border: 1px solid rgba(232,184,75,0.4);
+      color: var(--gold); font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 0.35rem 1rem; border-radius: 2px; margin-bottom: 1.5rem;
+    }
+    .hero-h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 5vw, 4.5rem); line-height: 1.08; font-weight: 900;
+      color: var(--white); margin-bottom: 1.5rem;
+    }
+    .hero-h1 em { font-style: italic; color: var(--gold); }
+    .hero-sub {
+      color: rgba(255,255,255,0.6); font-size: 1.05rem; line-height: 1.7;
+      margin-bottom: 2.5rem; max-width: 480px;
+    }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .hero-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .stat-card {
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px; padding: 2rem 1.5rem; text-align: center;
+      backdrop-filter: blur(10px);
+    }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem; font-weight: 900; color: var(--gold); line-height: 1;
+    }
+    .stat-label { color: rgba(255,255,255,0.5); font-size: 0.85rem; margin-top: 0.5rem; }
+
+    /* ── WHY US ── */
+    #why { background: var(--white); }
+    .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; }
+    .why-card {
+      background: var(--cream); border: 1.5px solid var(--border); border-radius: 14px;
+      padding: 2rem; transition: all 0.3s;
+    }
+    .why-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(10,22,40,0.1); border-color: var(--gold); }
+    .why-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .why-title { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; }
+    .why-desc { color: var(--muted); font-size: 0.9rem; line-height: 1.65; }
+
+    @media (max-width: 768px) {
+      .hero-content { grid-template-columns: 1fr; }
+      .hero-stats { margin-top: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">Med<span>Crack</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="pages/courses.html">Courses</a></li>
+    <li><a href="pages/professors.html">Faculty</a></li>
+    <li><a href="pages/alumni.html">Alumni</a></li>
+  </ul>
+  <button class="nav-cta" onclick="openModal()">Free Inquiry</button>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div>
+      <div class="hero-tag">🏥 India's Premier NEET Coaching</div>
+      <h1 class="hero-h1">Crack NEET.<br>Build Your <em>Medical</em> Career.</h1>
+      <p class="hero-sub">Med Crack Institute offers India's most rigorous and result-oriented NEET preparation — with expert faculty, proven methodology, and a culture of excellence.</p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="openModal()">Enquire Now →</button>
+        <a href="pages/courses.html" class="btn-outline">View Courses</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-card"><div class="stat-num">3200+</div><div class="stat-label">NEET Selections</div></div>
+      <div class="stat-card"><div class="stat-num">98</div><div class="stat-label">AIR Under 100</div></div>
+      <div class="stat-card"><div class="stat-num">12+</div><div class="stat-label">Years of Excellence</div></div>
+      <div class="stat-card"><div class="stat-num">40+</div><div class="stat-label">Expert Faculty</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS STRIP -->
+<div class="results-strip">
+  <div class="strip-item"><div class="strip-num">580+</div><div class="strip-lbl">Average Score 2024</div></div>
+  <div class="strip-item"><div class="strip-num">94%</div><div class="strip-lbl">Selection Rate</div></div>
+  <div class="strip-item"><div class="strip-num">18</div><div class="strip-lbl">AIR Top-10 Ranks</div></div>
+  <div class="strip-item"><div class="strip-num">200+</div><div class="strip-lbl">AIIMS Selections</div></div>
+</div>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="section-inner">
+    <div class="section-label">Why Med Crack</div>
+    <h2 class="section-title">What Sets Us Apart</h2>
+    <p class="section-sub">We don't just teach — we build doctors. Here's what makes Med Crack the first choice for NEET aspirants across India.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">🎯</div>
+        <div class="why-title">Focused NEET Strategy</div>
+        <p class="why-desc">Every lecture, test, and DPP is designed specifically for NEET — no wasted effort on irrelevant topics.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">📊</div>
+        <div class="why-title">Data-Driven Progress</div>
+        <p class="why-desc">Detailed weekly analytics show exactly where you're losing marks, so you improve with surgical precision.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">👨‍🏫</div>
+        <div class="why-title">AIIMS & IIT Alumni Faculty</div>
+        <p class="why-desc">Learn from doctors and scientists who have been where you want to go — faculty who mentor, not just teach.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🕘</div>
+        <div class="why-title">Doubt Clearance Daily</div>
+        <p class="why-desc">Faculty stay till 9 PM every day. No question is too small, no student is left behind.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">📝</div>
+        <div class="why-title">Exhaustive Test Series</div>
+        <p class="why-desc">40+ full-length mocks, chapter-wise tests, and past-paper analysis — so exam day feels like practice day.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🏠</div>
+        <div class="why-title">Online + Offline Hybrid</div>
+        <p class="why-desc">Live classes, recorded backups, and physical study material — quality NEET prep with zero geography barrier.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Med<span>Crack</span> Institute</div>
+  <p><strong>Address:</strong> 42, Medical Hub Complex, Sector 62, Noida, Uttar Pradesh – 201309</p>
+  <p><strong>Phone:</strong> +91-9876543210 &nbsp;|&nbsp; <strong>Email:</strong> admissions@medcrackinstitute.com</p>
+  <p style="margin-top:1rem;">© 2025 Med Crack Institute. All Rights Reserved.</p>
+</footer>
+
+<!-- INQUIRY MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <div id="modalForm">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem;">
+        <span style="font-size:2rem">🏥</span>
+        <h2 class="modal-title">Free Inquiry</h2>
+      </div>
+      <p class="modal-sub">Our academic counsellor will call you within 24 hours.</p>
+      <div class="form-grid">
+        <div class="form-row"><label>Student Name *</label><input type="text" id="studentName" placeholder="Full name" /></div>
+        <div class="form-row"><label>Parent Name *</label><input type="text" id="parentName" placeholder="Parent / Guardian" /></div>
+      </div>
+      <div class="form-grid">
+        <div class="form-row"><label>Mobile Number *</label><input type="tel" id="mobile" placeholder="+91 XXXXX XXXXX" /></div>
+        <div class="form-row"><label>Email Address</label><input type="email" id="email" placeholder="you@email.com" /></div>
+      </div>
+      <div class="form-grid">
+        <div class="form-row">
+          <label>Current Class *</label>
+          <select id="classSelect">
+            <option value="">Select class</option>
+            <option>Class X (Foundation)</option>
+            <option>Class XI</option>
+            <option>Class XII</option>
+            <option>XII Passed (Dropper)</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>Interested Program *</label>
+          <select id="program">
+            <option value="">Select program</option>
+            <option>2-Year Classroom</option>
+            <option>1-Year Dropper Batch</option>
+            <option>3-Month Crash Course</option>
+            <option>Online Hybrid</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <label>Message (Optional)</label>
+        <textarea id="message" placeholder="Tell us about your preparation, target score, or any queries..."></textarea>
+      </div>
+      <button class="modal-submit" onclick="submitForm()">Submit Inquiry →</button>
+    </div>
+    <div class="success-msg" id="successMsg">
+      <div class="check">✅</div>
+      <h3>Inquiry Submitted!</h3>
+      <p>Our team will contact you within 24 hours to discuss your NEET preparation journey.</p>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

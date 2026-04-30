@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alumni – Med Crack Institute</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    /* ── ALUMNI STORIES ── */
+    #stories { background: var(--white); }
+    .alumni-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.8rem;
+    }
+    .alumni-card {
+      background: var(--card-bg); border: 1.5px solid var(--border);
+      border-radius: 16px; padding: 2rem; transition: all 0.3s;
+      position: relative; overflow: hidden;
+    }
+    .alumni-card::before {
+      content: '"'; font-family: 'Playfair Display', serif;
+      font-size: 8rem; font-weight: 900; color: var(--gold); opacity: 0.08;
+      position: absolute; top: -1rem; left: 1rem; line-height: 1; pointer-events: none;
+    }
+    .alumni-card:hover { transform: translateY(-5px); box-shadow: 0 18px 44px rgba(10,22,40,0.12); border-color: var(--gold); }
+    .alumni-top { display: flex; align-items: center; gap: 1.2rem; margin-bottom: 1.2rem; }
+    .alumni-avatar {
+      width: 62px; height: 62px; border-radius: 50%;
+      background: var(--deep); border: 2.5px solid var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem; flex-shrink: 0;
+    }
+    .alumni-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--text); }
+    .alumni-rank { color: var(--crimson); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.04em; margin-top: 0.2rem; }
+    .alumni-batch { color: var(--muted); font-size: 0.75rem; margin-top: 0.15rem; }
+    .alumni-quote { color: #4a5568; font-size: 0.93rem; line-height: 1.7; font-style: italic; margin-bottom: 1.2rem; }
+    .alumni-college {
+      display: inline-block; background: rgba(10,22,40,0.07); color: var(--navy);
+      font-size: 0.78rem; font-weight: 700; padding: 0.3rem 0.85rem; border-radius: 20px;
+    }
+
+    /* ── RESULTS HALL ── */
+    #hall { background: var(--navy); }
+    #hall .section-title { color: var(--white); }
+    #hall .section-sub { color: rgba(255,255,255,0.5); }
+    .hall-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.2rem;
+    }
+    .hall-card {
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px; padding: 1.5rem; text-align: center; transition: all 0.3s;
+    }
+    .hall-card:hover { background: rgba(232,184,75,0.1); border-color: rgba(232,184,75,0.4); }
+    .hall-emoji { font-size: 1.8rem; margin-bottom: 0.5rem; }
+    .hall-name { color: var(--white); font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.2rem; }
+    .hall-rank { color: var(--gold); font-size: 0.82rem; font-weight: 600; }
+    .hall-college { color: rgba(255,255,255,0.4); font-size: 0.75rem; margin-top: 0.3rem; }
+
+    /* ── CTA BAND ── */
+    .cta-band {
+      background: var(--crimson); padding: 60px 5vw; text-align: center;
+    }
+    .cta-band h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 900; color: var(--white); margin-bottom: 0.75rem; }
+    .cta-band p { color: rgba(255,255,255,0.75); font-size: 1rem; margin-bottom: 2rem; }
+    .cta-band .btn-outline { border-color: rgba(255,255,255,0.5); }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="../index.html" class="nav-logo">Med<span>Crack</span></a>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="courses.html">Courses</a></li>
+    <li><a href="professors.html">Faculty</a></li>
+    <li><a href="alumni.html" class="active">Alumni</a></li>
+  </ul>
+  <button class="nav-cta" onclick="openModal()">Free Inquiry</button>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-inner">
+    <div class="page-hero-tag">🏆 Our Stars</div>
+    <h1>Alumni Who<br>Made Us <em>Proud</em></h1>
+    <p>3,200+ Med Crack students are now practising and studying medicine across India's finest colleges. Their stories are our greatest achievement.</p>
+  </div>
+</div>
+
+<!-- RESULTS STRIP -->
+<div class="results-strip">
+  <div class="strip-item"><div class="strip-num">3200+</div><div class="strip-lbl">Total Selections</div></div>
+  <div class="strip-item"><div class="strip-num">200+</div><div class="strip-lbl">AIIMS Selections</div></div>
+  <div class="strip-item"><div class="strip-num">98</div><div class="strip-lbl">AIR Under 100</div></div>
+  <div class="strip-item"><div class="strip-num">94%</div><div class="strip-lbl">Selection Rate</div></div>
+</div>
+
+<!-- ALUMNI STORIES -->
+<section id="stories">
+  <div class="section-inner">
+    <div class="section-label">Testimonials</div>
+    <h2 class="section-title">Stories of Success</h2>
+    <p class="section-sub">In their own words — what Med Crack meant to the students who cracked NEET and achieved their dream.</p>
+    <div class="alumni-grid">
+
+      <div class="alumni-card">
+        <div class="alumni-top">
+          <div class="alumni-avatar">👩‍⚕️</div>
+          <div>
+            <div class="alumni-name">Ananya Singh</div>
+            <div class="alumni-rank">AIR 12 · Score: 715/720</div>
+            <div class="alumni-batch">Batch of 2023 · 2-Year Program</div>
+          </div>
+        </div>
+        <p class="alumni-quote">Med Crack's structured approach and Dr. Sharma's biology notes were the backbone of my preparation. I wouldn't be at AIIMS Delhi without this institute. The weekly mocks were so accurate, the actual NEET felt like just another Sunday test.</p>
+        <span class="alumni-college">🏥 AIIMS New Delhi</span>
+      </div>
+
+      <div class="alumni-card">
+        <div class="alumni-top">
+          <div class="alumni-avatar">👨‍⚕️</div>
+          <div>
+            <div class="alumni-name">Rohan Kapoor</div>
+            <div class="alumni-rank">AIR 45 · Score: 710/720</div>
+            <div class="alumni-batch">Batch of 2023 · Dropper Program</div>
+          </div>
+        </div>
+        <p class="alumni-quote">After two failed attempts elsewhere, the dropper batch at Med Crack completely transformed my understanding of Chemistry. Dr. Menon's mnemonics are something else — I scored 173 in Chemistry in my final attempt. Life-changing.</p>
+        <span class="alumni-college">🏥 AIIMS Jodhpur</span>
+      </div>
+
+      <div class="alumni-card">
+        <div class="alumni-top">
+          <div class="alumni-avatar">👩‍🔬</div>
+          <div>
+            <div class="alumni-name">Sneha Patel</div>
+            <div class="alumni-rank">Score: 710/720</div>
+            <div class="alumni-batch">Batch of 2024 · Online Hybrid</div>
+          </div>
+        </div>
+        <p class="alumni-quote">The weekly mock tests and performance analytics helped me know exactly where I was losing marks. Being from Gujarat, the Online Hybrid was a blessing — same quality as classroom students, with mentors who genuinely cared.</p>
+        <span class="alumni-college">🏥 Maulana Azad Medical College</span>
+      </div>
+
+      <div class="alumni-card">
+        <div class="alumni-top">
+          <div class="alumni-avatar">🧑‍⚕️</div>
+          <div>
+            <div class="alumni-name">Arjun Nair</div>
+            <div class="alumni-rank">AIR 103 · Score: 704/720</div>
+            <div class="alumni-batch">Batch of 2022 · Crash Course</div>
+          </div>
+        </div>
+        <p class="alumni-quote">Physics was my biggest fear going into NEET. Prof. Verma's way of teaching made it my strongest subject by exam day. The 90-day crash course added over 60 marks to my total score. Absolutely worth every rupee.</p>
+        <span class="alumni-college">🏥 JIPMER Puducherry</span>
+      </div>
+
+      <div class="alumni-card">
+        <div class="alumni-top">
+          <div class="alumni-avatar">👩‍🏫</div>
+          <div>
+            <div class="alumni-name">Divya Krishnan</div>
+            <div class="alumni-rank">Score: 695/720</div>
+            <div class="alumni-batch">Batch of 2024 · Online Hybrid</div>
+          </div>
+        </div>
+        <p class="alumni-quote">I was from a small town in Tamil Nadu and the Online Hybrid batch was a blessing. Same quality as classroom students, with mentors who genuinely cared about my progress. My personal mentor called me every Friday to track targets.</p>
+        <span class="alumni-college">🏥 KGMU Lucknow</span>
+      </div>
+
+      <div class="alumni-card">
+        <div class="alumni-top">
+          <div class="alumni-avatar">👨‍🔬</div>
+          <div>
+            <div class="alumni-name">Vivek Mishra</div>
+            <div class="alumni-rank">AIR 78 · Score: 706/720</div>
+            <div class="alumni-batch">Batch of 2023 · 2-Year Program</div>
+          </div>
+        </div>
+        <p class="alumni-quote">The institute's culture is different — competitive but collaborative. Students help each other, and teachers stay back till 9 PM to clear doubts. That dedication is rare and it rubs off on you. I became a better student because of it.</p>
+        <span class="alumni-college">🏥 AIIMS Bhopal</span>
+      </div>
+
+      <div class="alumni-card">
+        <div class="alumni-top">
+          <div class="alumni-avatar">👩‍⚕️</div>
+          <div>
+            <div class="alumni-name">Riya Agarwal</div>
+            <div class="alumni-rank">AIR 156 · Score: 699/720</div>
+            <div class="alumni-batch">Batch of 2024 · Dropper Program</div>
+          </div>
+        </div>
+        <p class="alumni-quote">I joined Med Crack after scoring 580 in my first NEET attempt. The error analysis system showed me I was losing 80+ marks in Zoology alone. One targeted year later, I improved by over 119 marks. The system truly works.</p>
+        <span class="alumni-college">🏥 AIIMS Rishikesh</span>
+      </div>
+
+      <div class="alumni-card">
+        <div class="alumni-top">
+          <div class="alumni-avatar">👨‍⚕️</div>
+          <div>
+            <div class="alumni-name">Siddharth Jain</div>
+            <div class="alumni-rank">Score: 688/720</div>
+            <div class="alumni-batch">Batch of 2022 · 2-Year Program</div>
+          </div>
+        </div>
+        <p class="alumni-quote">Joining Med Crack in Class XI was the best decision of my life. The 2-year program meant I never had to choose between boards and NEET. Dr. Rao's anatomy sessions are something I will never forget — pure gold.</p>
+        <span class="alumni-college">🏥 GMC Nagpur</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HALL OF FAME -->
+<section id="hall">
+  <div class="section-inner">
+    <div class="section-label" style="color:var(--gold)">Hall of Fame</div>
+    <h2 class="section-title">Top Ranks, All Years</h2>
+    <p class="section-sub">A snapshot of our highest-ranked students across years — each one a story of consistent effort and expert guidance.</p>
+    <div class="hall-grid">
+      <div class="hall-card"><div class="hall-emoji">🥇</div><div class="hall-name">Ananya Singh</div><div class="hall-rank">AIR 12 · 2023</div><div class="hall-college">AIIMS Delhi</div></div>
+      <div class="hall-card"><div class="hall-emoji">🥈</div><div class="hall-name">Rohan Kapoor</div><div class="hall-rank">AIR 45 · 2023</div><div class="hall-college">AIIMS Jodhpur</div></div>
+      <div class="hall-card"><div class="hall-emoji">🥉</div><div class="hall-name">Vivek Mishra</div><div class="hall-rank">AIR 78 · 2023</div><div class="hall-college">AIIMS Bhopal</div></div>
+      <div class="hall-card"><div class="hall-emoji">⭐</div><div class="hall-name">Arjun Nair</div><div class="hall-rank">AIR 103 · 2022</div><div class="hall-college">JIPMER</div></div>
+      <div class="hall-card"><div class="hall-emoji">⭐</div><div class="hall-name">Riya Agarwal</div><div class="hall-rank">AIR 156 · 2024</div><div class="hall-college">AIIMS Rishikesh</div></div>
+      <div class="hall-card"><div class="hall-emoji">⭐</div><div class="hall-name">Kiran Bhatt</div><div class="hall-rank">AIR 198 · 2021</div><div class="hall-college">MAMC Delhi</div></div>
+      <div class="hall-card"><div class="hall-emoji">⭐</div><div class="hall-name">Preethi Nair</div><div class="hall-rank">AIR 210 · 2022</div><div class="hall-college">AIIMS Madurai</div></div>
+      <div class="hall-card"><div class="hall-emoji">⭐</div><div class="hall-name">Aditya Kumar</div><div class="hall-rank">AIR 232 · 2024</div><div class="hall-college">AIIMS Patna</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <h2>Your Name Could Be on This Wall</h2>
+  <p>Join thousands of Med Crack alumni currently serving patients across India. Your journey starts with one inquiry.</p>
+  <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+    <button class="btn-primary" onclick="openModal()" style="background:var(--white);color:var(--crimson);">Enquire Now →</button>
+    <a href="courses.html" class="btn-outline">Explore Courses</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Med<span>Crack</span> Institute</div>
+  <p><strong>Address:</strong> 42, Medical Hub Complex, Sector 62, Noida, Uttar Pradesh – 201309</p>
+  <p><strong>Phone:</strong> +91-9876543210 &nbsp;|&nbsp; <strong>Email:</strong> admissions@medcrackinstitute.com</p>
+  <p style="margin-top:1rem;">© 2025 Med Crack Institute. All Rights Reserved.</p>
+</footer>
+
+<!-- INQUIRY MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <div id="modalForm">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem;">
+        <span style="font-size:2rem">🏥</span>
+        <h2 class="modal-title">Free Inquiry</h2>
+      </div>
+      <p class="modal-sub">Our academic counsellor will call you within 24 hours.</p>
+      <div class="form-grid">
+        <div class="form-row"><label>Student Name *</label><input type="text" id="studentName" placeholder="Full name" /></div>
+        <div class="form-row"><label>Parent Name *</label><input type="text" id="parentName" placeholder="Parent / Guardian" /></div>
+      </div>
+      <div class="form-grid">
+        <div class="form-row"><label>Mobile Number *</label><input type="tel" id="mobile" placeholder="+91 XXXXX XXXXX" /></div>
+        <div class="form-row"><label>Email Address</label><input type="email" id="email" placeholder="you@email.com" /></div>
+      </div>
+      <div class="form-grid">
+        <div class="form-row">
+          <label>Current Class *</label>
+          <select id="classSelect">
+            <option value="">Select class</option>
+            <option>Class X (Foundation)</option>
+            <option>Class XI</option>
+            <option>Class XII</option>
+            <option>XII Passed (Dropper)</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>Interested Program *</label>
+          <select id="program">
+            <option value="">Select program</option>
+            <option>2-Year Classroom</option>
+            <option>1-Year Dropper Batch</option>
+            <option>3-Month Crash Course</option>
+            <option>Online Hybrid</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <label>Message (Optional)</label>
+        <textarea id="message" placeholder="Tell us about your preparation, target score, or any queries..."></textarea>
+      </div>
+      <button class="modal-submit" onclick="submitForm()">Submit Inquiry →</button>
+    </div>
+    <div class="success-msg" id="successMsg">
+      <div class="check">✅</div>
+      <h3>Inquiry Submitted!</h3>
+      <p>Our team will contact you within 24 hours.</p>
+    </div>
+  </div>
+</div>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
